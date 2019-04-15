@@ -1,0 +1,51 @@
+<div class="center jumbotron">
+  <h1></h1>
+  
+  <table class="table table-hover" >
+  	<thead>
+  		<th>ID</th>
+			<th>First name</th>
+			<th>Last name</th>
+			<th>Email</th>
+			<th>Phone number</th>
+			<th>Action</th>
+		</thead>
+    <tbody id="tableBody">
+  	 <%= form_for @user, remote: true do |f| %> 
+	 			<tr>
+			    <td></td>
+			  	<td> <%= f.text_field :first_name, 
+			  			 class: 'form-control upper', 
+			  			 required: true %> 
+			  	     <span class="wrong" 
+			  	           id="valid_user_first_name"></span></td>
+			  	           
+			  	<td> <%= f.text_field :last_name, 
+			  	         class: 'form-control upper', 
+			  	         required: true %>
+			  	     <span class="wrong"
+			  	           id="valid_user_last_name"></span> </td>
+			  	           
+			  	<td> <%= f.email_field :email, 
+			  	         class: 'form-control', 
+			  	         required: true %>
+			  	     <span class="wrong" 
+			  	     id="valid_user_email"></span></td>
+			  	     
+			  	<td> <%= f.text_field :phone, 
+			  	         class: 'form-control',
+			  	         required: true %>
+			  	     <span class="wrong"
+			  	           id="valid_user_phone"></span></td>
+			  	           
+			  	<td><%= f.submit "Add contact",
+			  	        class: "btn btn-primary",
+			  	        disabled: true,
+			  	        id: 'add_button',
+			  	        data: {"disable-with": "Saving..."} %> </td>
+	 		 </tr> 
+ 			<% end %>
+ 			<%= render @users %>
+    </tbody>
+	</table>
+</div>

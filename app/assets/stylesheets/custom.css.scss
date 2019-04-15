@@ -1,0 +1,15 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.hidden {
+    display: none;
+}
+
+.upper {
+    text-transform:capitalize;
+}
+
+.wrong {
+    color: gray;
+    font-size: x-small;
+}
